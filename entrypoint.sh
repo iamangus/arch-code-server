@@ -1,14 +1,16 @@
 #!/bin/bash
 set -eu
 
+${USER_NAME}
+
 code-server --install-extension golang.go &
 
 code-server --install-extension python &
 
-whoami
+sudo useradd -m ${USER_NAME}
 
-sudo useradd -m angoo
+sudo echo "${USER_NAME} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER_NAME}
 
-sudo echo "angoo ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/angoo
+su $USER_NAME --command "code-server --auth none --bind-addr 0.0.0.0:8080 '~/'"
 
-code-server --auth none --bind-addr 0.0.0.0:8080 "/home/angoo"
+#code-server --auth none --bind-addr 0.0.0.0:8080 "/home/${USER_NAME}"
