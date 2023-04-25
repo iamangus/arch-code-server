@@ -4,9 +4,10 @@ ENV TZ="America/Chicago"
 
 ENV CSVER=4.4.0
 
-RUN pacman -Sy git --noconfirm
+RUN pacman -Sy git --noconfirm \
+    && useradd -m makepkg
 
-USER angoo
+USER makepkg
 WORKDIR /tmp
 RUN git clone https://aur.archlinux.org/yay-git.git \
     && cd yay-git \
