@@ -4,7 +4,7 @@ ENV TZ="America/Chicago"
 
 ENV CSVER=4.4.0
 
-RUN pacman -Sy git --noconfirm \
+RUN pacman -Sy git base-devel --noconfirm \
     && useradd -m makepkg
 
 USER makepkg
