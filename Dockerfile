@@ -4,7 +4,7 @@ ENV TZ="America/Chicago"
 
 ENV CSVER=4.4.0
 
-RUN pacman -Sy git
+RUN pacman -Sy git --noconfirm
 
 USER angoo
 WORKDIR /tmp
@@ -13,7 +13,7 @@ RUN git clone https://aur.archlinux.org/yay-git.git \
     && makepkg -si
     
 USER root
-RUN yay -Syu code-server
+RUN yay -Syu code-server --noconfirm
 
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN sudo chmod +x /usr/bin/entrypoint.sh
