@@ -1,4 +1,4 @@
-FROM arch:latest
+FROM archlinux:latest
 
 ENV TZ="America/Chicago"
 
