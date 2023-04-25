@@ -37,4 +37,4 @@ RUN sudo chmod +x /usr/bin/entrypoint.sh
 
 EXPOSE 8080
 
-ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8080"]
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
