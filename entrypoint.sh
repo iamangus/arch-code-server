@@ -1,8 +1,6 @@
 #!/bin/bash
 set -eu
 
-${USER_NAME}
-
 code-server --install-extension golang.go &
 
 code-server --install-extension python &
