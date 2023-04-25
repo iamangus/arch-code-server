@@ -31,6 +31,7 @@ RUN git clone https://aur.archlinux.org/yay-bin.git && \
 RUN yay -Sy --noconfirm code-server
 
 USER root
+WORKDIR /
 
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN sudo chmod +x /usr/bin/entrypoint.sh
