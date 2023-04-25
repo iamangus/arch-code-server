@@ -28,8 +28,6 @@ RUN git clone https://aur.archlinux.org/yay-bin.git && \
     cd yay-bin && \
     makepkg --noconfirm --syncdeps --rmdeps --install --clean
 
-USER root
-
 RUN yay -Sy --noconfirm code-server
 
 COPY entrypoint.sh /usr/bin/entrypoint.sh
