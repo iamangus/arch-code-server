@@ -3,7 +3,7 @@ set -eu
 
 code-server --install-extension golang.go &
 
-code-server --install-extension python &
+code-server --install-extension ms-python.python &
 
 sudo useradd -m ${USER_NAME}
 
