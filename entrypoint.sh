@@ -7,7 +7,7 @@ code-server --install-extension ms-python.python &
 
 sudo useradd -m ${USER_NAME}
 
-sudo chown ${USER_NAME}:${USER_NAME} /home/${USER_NAME} 
+sudo chown -R ${USER_NAME}:${USER_NAME} /home/${USER_NAME} 
 
 sudo echo "${USER_NAME} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER_NAME}
 
