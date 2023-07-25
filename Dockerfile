@@ -8,7 +8,7 @@ RUN useradd -m notroot
 # Generally, refreshing without sync'ing is discouraged, but we've a clean
 # environment here.
 RUN pacman -Sy --noconfirm archlinux-keyring && \
-    pacman -Sy --noconfirm base-devel git python python-pip python-virtualenv python-pipenv kubectl k9s vim wget openssh && \
+    pacman -Sy --noconfirm base-devel git python python-pip python-virtualenv python-pipenv kubectl k9s vim wget openssh github-cli && \
     pacman -Syu --noconfirm
 
 # Allow notroot to run stuff as root (to install dependencies):
